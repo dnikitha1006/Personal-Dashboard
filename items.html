@@ -34,16 +34,18 @@
 
         <!-- 🔍 SEARCH + FILTER -->
         <div style="margin-bottom:15px;">
-          <input type="text" id="searchInput" placeholder="Search items..." onkeyup="filterItems()">
 
-          <select id="filterStatus" onchange="filterItems()">
-            <option value="all">All</option>
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
-          </select>
+        <label for="searchInput"><b>🔍Search Items:</b></label><br>
+        <input type="text" id="searchInput" name="search" placeholder="Search items..." onkeyup="filterItems()">
 
-          <button onclick="showForm()">➕ Add Item</button>
-        </div>
+        <br><br>
+
+        <label for="filterStatus"><b>Filter by Status:</b></label><br>
+        <select id="filterStatus" name="status" onchange="filterItems()">
+        <option value="all">All</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+        </select>
 
         <!--  ADD / EDIT FORM -->
   
