@@ -18,7 +18,7 @@ body {
 
 /* ================= LOGIN PAGE ================= */
 
-.login-page {
+.index-page {
   height: 100vh;
   background: linear-gradient(135deg, #6366f1, #ec4899);
   display: flex;
@@ -26,7 +26,7 @@ body {
   align-items: center;
 }
 
-.login-container {
+.index-container {
   width: 900px;
   height: 500px;
   display: flex;
@@ -36,7 +36,7 @@ body {
 }
 
 /* LEFT SIDE */
-.login-left {
+.index-left {
   flex: 1;
   color: white;
   padding: 60px;
@@ -46,18 +46,18 @@ body {
   justify-content: center;
 }
 
-.login-left h1 {
+.index-left h1 {
   font-size: 36px;
   margin-bottom: 20px;
 }
 
-.login-left p {
+.index-left p {
   font-size: 16px;
   line-height: 1.6;
 }
 
 /* RIGHT SIDE */
-.login-right {
+.index-right {
   flex: 1;
   background: #ffffff;
   display: flex;
@@ -66,18 +66,18 @@ body {
 }
 
 /* LOGIN BOX */
-.login-box {
+.index-box {
   width: 280px;
   text-align: center;
 }
 
-.login-box h2 {
+.index-box h2 {
   margin-bottom: 20px;
   color: #444;
 }
 
 /* INPUTS */
-.login-box input {
+.index-box input {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
@@ -86,14 +86,14 @@ body {
   background: #f9fafb;
 }
 
-.login-box input:focus {
+.index-box input:focus {
   outline: none;
   border-color: #6366f1;
   background: #fff;
 }
 
 /* LOGIN BUTTON */
-.login-box button {
+.index-box button {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
@@ -105,7 +105,7 @@ body {
   cursor: pointer;
 }
 
-.login-box button:hover {
+.index-box button:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(99,102,241,0.3);
 }
