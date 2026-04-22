@@ -359,7 +359,7 @@ function register() {
   const confirm = document.getElementById("regConfirm").value.trim();
 
   const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
-  const passwordPattern = /^(?=.*\d).{6,}$/;
+  const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
 
   if (!email || !password || !confirm) {
     return alert("Fill all fields");
@@ -370,7 +370,7 @@ function register() {
   }
 
   if (!passwordPattern.test(password)) {
-    return alert("Password must be 6+ chars & include number");
+    return alert("Password must be at least 6 characters and include 1 uppercase letter, 1 number, and 1 special symbol");
   }
 
   if (password !== confirm) {
