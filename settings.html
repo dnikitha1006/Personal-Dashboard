@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Settings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="checkAuth(); setUserEmail(); loadAccountDetails()">
+
+  <div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <h2 class="logo">MyApp</h2>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="items.html">📋 Items</a>
+      <a href="settings.html">⚙️ Settings</a>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <div class="navbar">
+        <h2>Settings</h2>
+        <div class="nav-right">
+          <span id="userEmail"></span>
+          <button onclick="logout()">Logout</button>
+        </div>
+      </div>
+
+      <div class="content">
+
+        <div class="form-card">
+  <h3>👤 Account Details</h3>
+
+  <p><strong>Email:</strong> <span id="accountEmail"></span></p>
+  <p><strong>Account Type:</strong> Basic User</p>
+  <p><strong>Total Items:</strong> <span id="accountItems"></span></p>
+
+    </div>
+
+
+        <!-- CHANGE PASSWORD -->
+        <div class="form-card">
+          <h3>🔑 Change Password</h3>
+          <input type="password" id="oldPassword" placeholder="Old Password">
+          <input type="password" id="newPassword" placeholder="New Password">
+          <button onclick="changePassword()">Update Password</button>
+        </div>
+
+        <!-- CLEAR DATA -->
+        <div class="form-card">
+          <h3>🧹 Clear My Items</h3>
+          <button onclick="clearMyItems()">Delete All My Items</button>
+        </div>
+
+        <!-- DELETE ACCOUNT -->
+        <div class="form-card">
+          <h3 style="color:red;">⚠️ Delete Account</h3>
+          <p>This action cannot be undone</p>
+          <button onclick="deleteAccount()" style="background:red;">Delete My Account</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

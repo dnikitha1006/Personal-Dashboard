@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body onload="checkAuth(); loadDashboard()">
+
+  <div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <h2 class="logo">MyApp</h2>
+
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="items.html">📋 Items</a>
+      <a href="settings.html">⚙️ Settings</a>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- NAVBAR -->
+      <div class="navbar">
+        <h2>Dashboard</h2>
+
+        <div class="nav-right">
+          <span id="userEmail"></span>
+          <button onclick="logout()">Logout</button>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content">
+
+        <!-- TOP STATS -->
+        <div id="dashboardCards" class="cards"></div>
+
+        <!-- CHARTS ROW -->
+        <div class="charts-row">
+
+          <div class="chart-box">
+            <h3>📊 Active vs Inactive</h3>
+            <canvas id="statusChart"></canvas>
+          </div>
+
+          <div class="chart-box">
+            <h3>⚡ Priority Overview</h3>
+            <canvas id="priorityChart"></canvas>
+          </div>
+
+        </div>
+
+
+        <!-- SMART SUMMARY -->
+        <div class="section">
+          <h3>🧠 Smart Summary</h3>
+          <p id="smartSummary"></p>
+        </div>
+
+        <!-- UPCOMING -->
+        <div class="section">
+          <h3>📅 Upcoming Tasks</h3>
+          <ul id="upcomingList"></ul>
+        </div>
+
+        <!-- PRIORITY SUMMARY -->
+        <div class="section">
+          <h3>⚡ Priority Overview</h3>
+          <ul id="priorityList"></ul>
+        </div>
+
+        <!-- CATEGORY -->
+        <div class="section">
+          <h3>📊 Category Breakdown</h3>
+          <ul id="categoryList"></ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

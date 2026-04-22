@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Items</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="checkAuth(); loadItems()">
+
+  <div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <h2 class="logo">MyApp</h2>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="items.html">📋 Items</a>
+      <a href="settings.html">⚙️ Settings</a>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- NAVBAR -->
+      <div class="navbar">
+        <h2>Items</h2>
+        <div class="nav-right">
+          <span id="userEmail"></span>
+          <button onclick="logout()">Logout</button>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content">
+
+        <!-- 🔍 SEARCH + FILTER -->
+        <div style="margin-bottom:15px;">
+          <input type="text" id="searchInput" placeholder="Search items..." onkeyup="filterItems()">
+
+          <select id="filterStatus" onchange="filterItems()">
+            <option value="all">All</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
+
+          <button onclick="showForm()">➕ Add Item</button>
+        </div>
+
+        <!--  ADD / EDIT FORM -->
+  
+<div id="formModal" class="modal hidden">
+
+  <div class="modal-content">
+
+    <h3 id="formTitle">Add Item</h3>
+
+    <!-- TITLE -->
+    <label>Title</label>
+    <input id="title" placeholder="Enter title" />
+
+    <!-- STATUS -->
+    <label>Status</label>
+    <select id="status">
+      <option value="active">Active</option>
+      <option value="inactive">Inactive</option>
+    </select>
+
+    <!-- PRIORITY -->
+    <label>Priority</label>
+    <select id="priority">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+
+    <!-- CATEGORY -->
+    <label>Category</label>
+    <input id="category" placeholder="e.g. Work / Personal" />
+
+    <!-- DUE DATE -->
+    <label>Due Date</label>
+    <input type="date" id="dueDate" />
+
+    <!-- BUTTONS -->
+    <div style="margin-top:15px;">
+      <button onclick="saveItem()">Save</button>
+      <button onclick="cancelEdit()" class="cancel-btn">Cancel</button>
+    </div>
+
+  </div>
+
+</div>
+
+        <!-- 📋 ITEMS TABLE -->
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Status</th>
+              <th>Priority</th>
+              <th>Category</th>
+              <th>Due Date</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="itemsTable"></tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
