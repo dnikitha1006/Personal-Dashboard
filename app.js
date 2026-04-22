@@ -33,7 +33,7 @@ function login() {
 function logout() {
   localStorage.removeItem("isLoggedIn");
   localStorage.removeItem("userEmail");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 function checkAuth() {
@@ -41,7 +41,7 @@ function checkAuth() {
   const user = localStorage.getItem("userEmail");
 
   if (isLoggedIn !== "true" || !user) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   }
 }
 
@@ -388,7 +388,7 @@ function register() {
   saveUsers(users);
 
   alert("Registration successful!");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 function resetPassword() {
@@ -413,7 +413,7 @@ function resetPassword() {
   saveUsers(users);
 
   alert("Password reset successful!");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 // change password
 function changePassword() {
